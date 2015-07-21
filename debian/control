@@ -1,0 +1,29 @@
+Source: confuse
+Section: libs
+Priority: optional
+Maintainer: Aurelien Jarno <aurel32@debian.org>
+Build-Depends: debhelper (>= 5.0.0), autotools-dev, pkg-config
+Standards-Version: 3.8.4
+Homepage: http://www.nongnu.org/confuse/
+
+Package: libconfuse0
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Library for parsing configuration files
+ libConfuse is a configuration file parser library written in C. It
+ supports sections and (lists of) values (strings, integers, floats, 
+ booleans or other sections), as well as some other features (such as
+ single/double-quoted strings, environment variable expansion, functions
+ and nested include statements).
+ .
+ It makes it very easy to add configuration file capability to a
+ program using a simple API. 
+
+Package: libconfuse-dev
+Section: libdevel
+Architecture: any
+Depends: libconfuse0 (= ${binary:Version}), ${misc:Depends}
+Description: Development files for libConfuse
+ This package contains the header files and static library needed to
+ compile applications that use confuse.
